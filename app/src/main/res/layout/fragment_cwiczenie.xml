@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Cwiczenie">
+
+    <EditText
+        android:id="@+id/opisCwiczeniaId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Opis"
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupTypCwiczenia" />
+
+    <EditText
+        android:id="@+id/nazwaCwiczeniaId"
+        android:layout_width="213dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="95dp"
+        android:ems="10"
+        android:hint="Nazwa"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/dodajCwiczenieId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="90dp"
+        android:text="Dodaj"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/opisCwiczeniaId" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupTypCwiczenia"
+        android:layout_width="124dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="13dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nazwaCwiczeniaId">
+
+        <RadioButton
+            android:id="@+id/siloweButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Siłowe" />
+
+        <RadioButton
+            android:id="@+id/kalisteniczneButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kalisteniczne" />
+
+        <RadioButton
+            android:id="@+id/kardioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kardio" />
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
