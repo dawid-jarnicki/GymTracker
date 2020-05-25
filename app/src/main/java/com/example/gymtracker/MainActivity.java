@@ -9,6 +9,11 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -18,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonCreateClick(View view) {
-       //boolean checked = ((RadioButton) view).isChecked();
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        Map<String, Object> user = new HashMap<>();
         RadioGroup rg = (RadioGroup) findViewById(R.id.radioGroupPlec);
         int plec = rg.getCheckedRadioButtonId();
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
@@ -31,21 +38,24 @@ public class MainActivity extends AppCompatActivity {
         EditText getNazwa = (EditText) findViewById(R.id.nazwaId);
         String nazwa = getNazwa.getText().toString();
 
-        if (plec == R.id.femButton)
+        if (plec == R.id.femButton || plec == R.id.maleButton)
         {
-
-            alert.setMessage(nazwa+"\nKobieta\n"+waga+" "+wzrost);
-
+            alert.setMessage("Pomyślnie utworzono profil\n "+nazwa+"\n:)");
+            user.put("Nazwa", nazwa);
+            user.put("Plec", "Kobieta");
+            user.put("Waga", waga);
+            user.put("Wzrost", wzrost);
+            db.collection("users").document(nazwa).set(user);
 
        }
-        else if (plec == R.id.maleButton)
-        {
-            alert.setMessage(nazwa+"\nMężczyzna\n"+waga+" "+wzrost);
-        }
         else
         {
             alert.setMessage("Nie uzupełniłeś wszystkich pól !");
         }
         alert.show();
+
+
+
+
     }
 }
