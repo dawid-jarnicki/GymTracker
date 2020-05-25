@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Witaj w GymTracker !"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="341dp"
+        android:layout_height="25dp"
+        android:text="Aby korzystać z aplikacji musisz utworzyć swój profil."
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.108" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="swój profil."
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/nazwaId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nazwa"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.074" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupPlec"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nazwaId"
+        app:layout_constraintVertical_bias="0.031">
+
+        <RadioButton
+            android:id="@+id/femButton"
+            android:layout_width="201dp"
+            android:layout_height="wrap_content"
+            android:text="Kobieta" />
+
+        <RadioButton
+            android:id="@+id/maleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mężczyzna" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/wagaText"
+        android:layout_width="170dp"
+        android:layout_height="47dp"
+        android:ems="10"
+        android:hint="Waga(opcjonalnie)"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupPlec"
+        app:layout_constraintVertical_bias="0.176" />
+
+    <EditText
+        android:id="@+id/wzrostText"
+        android:layout_width="170dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:ems="10"
+        android:hint="Wzrost(opcjonalnie)"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/wagaText"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupPlec"
+        app:layout_constraintVertical_bias="0.178" />
+
+    <Button
+        android:id="@+id/buttonCreate"
+        android:layout_width="135dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="188dp"
+        android:onClick="buttonCreateClick"
+        android:text="Stwórz"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupPlec"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
