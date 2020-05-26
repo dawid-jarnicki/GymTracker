@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent intent = new Intent(MainActivity.this, nav.class);
+        startActivity(intent);
     }
 
     public void buttonCreateClick(View view) {
@@ -49,8 +51,7 @@ public class MainActivity extends AppCompatActivity {
             user.put("Wzrost", wzrost);
             db.collection("users").document(nazwa).set(user);
 
-            Intent intent = new Intent(MainActivity.this, nav.class);
-            startActivity(intent);
+
        }
         else
         {
@@ -62,5 +63,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 
 }
