@@ -45,4 +45,14 @@
         android:name="com.example.gymtracker.ui.cwiczenie.CwiczenieFragment"
         android:label="@string/menu_cwiczenie"
         tools:layout="@layout/fragment_cwiczenie" />
+    <fragment
+        android:id="@+id/nav_dziennik"
+        android:name="com.example.gymtracker.ui.dziennik.DziennikFragment"
+        android:label="@string/menu_dziennik"
+        tools:layout="@layout/fragment_dziennik" />
+    <fragment
+        android:id="@+id/nav_historia"
+        android:name="com.example.gymtracker.ui.historia.HistoriaFragment"
+        android:label="@string/menu_historia"
+        tools:layout="@layout/fragment_historia" />
 </navigation>

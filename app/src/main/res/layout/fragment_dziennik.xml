@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dziennik.DziennikFragment">
+
+    <TextView
+        android:id="@+id/textDZWitaj"
+        android:layout_width="323dp"
+        android:layout_height="60dp"
+        android:text="Witaj w twoim dzienniku wagi!"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07999998" />
+
+    <TextView
+        android:id="@+id/textDZWaga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="133dp"
+        android:layout_marginLeft="133dp"
+        android:layout_marginBottom="24dp"
+        android:text="Waga:"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDZWaga"
+        app:layout_constraintStart_toEndOf="@+id/textDZWzrost2" />
+
+    <EditText
+        android:id="@+id/editTextDZWzrost"
+        android:layout_width="79dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:hint="180 cm"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/textDZTluszcz"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextDZTluszcz"
+        android:layout_width="82dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="375dp"
+        android:ems="10"
+        android:hint="20 %"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextDZWoda"
+        android:layout_width="82dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginBottom="375dp"
+        android:ems="10"
+        android:hint="35%"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonDZTluszcz" />
+
+    <TextView
+        android:id="@+id/textDZWzrost2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="Wzrost:"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDZWzrost"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textDZBMIZakres"
+        android:layout_width="60dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="79dp"
+        android:text="Zakres"
+        app:layout_constraintStart_toEndOf="@+id/textDZBMI"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDZWoda" />
+
+    <TextView
+        android:id="@+id/textDZBMI"
+        android:layout_width="40dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="79dp"
+        android:text="BMI:"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonDZBMI2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDZTluszcz" />
+
+    <TextView
+        android:id="@+id/textDZBMIZakresOpis"
+        android:layout_width="60dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="79dp"
+        android:text="Opis"
+        app:layout_constraintStart_toEndOf="@+id/textDZBMIZakres"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDZWoda" />
+
+    <TextView
+        android:id="@+id/textDZFFMIZakres"
+        android:layout_width="60dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="25dp"
+        android:text="Zakres"
+        app:layout_constraintStart_toEndOf="@+id/textDZFFMI"
+        app:layout_constraintTop_toBottomOf="@+id/textDZBMIZakres" />
+
+    <TextView
+        android:id="@+id/textDZFFMI"
+        android:layout_width="40dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="25dp"
+        android:text="FFMI:"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonDZFFMI"
+        app:layout_constraintTop_toBottomOf="@+id/textDZBMI" />
+
+    <TextView
+        android:id="@+id/textDZFFMIZakresOpis"
+        android:layout_width="60dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="25dp"
+        android:text="Opis"
+        app:layout_constraintStart_toEndOf="@+id/textDZFFMIZakres"
+        app:layout_constraintTop_toBottomOf="@+id/textDZBMIZakresOpis" />
+
+    <TextView
+        android:id="@+id/textDZTluszcz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="12dp"
+        android:text="Tkanka tłuszczowa:"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDZTluszcz"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textDZWoda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="63dp"
+        android:layout_marginLeft="63dp"
+        android:layout_marginBottom="12dp"
+        android:text="Woda:"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDZWoda"
+        app:layout_constraintStart_toEndOf="@+id/textDZTluszcz" />
+
+    <EditText
+        android:id="@+id/editTextDZWaga"
+        android:layout_width="83dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="108dp"
+        android:layout_marginBottom="27dp"
+        android:ems="10"
+        android:hint="90 kg"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/textDZWoda"
+        app:layout_constraintStart_toEndOf="@+id/editTextDZWzrost" />
+
+    <ImageButton
+        android:id="@+id/imageButtonDZTluszcz"
+        android:layout_width="42dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/textDZBMI"
+        app:layout_constraintStart_toEndOf="@+id/editTextDZTluszcz"
+        app:srcCompat="@android:drawable/ic_menu_help" />
+
+    <ImageButton
+        android:id="@+id/imageButtonDZFFMI"
+        android:layout_width="42dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonDZBMI2"
+        app:srcCompat="@android:drawable/ic_menu_help" />
+
+    <ImageButton
+        android:id="@+id/imageButtonDZBMI2"
+        android:layout_width="42dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="79dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDZTluszcz"
+        app:srcCompat="@android:drawable/ic_menu_help" />
+
+    <ImageButton
+        android:id="@+id/imageButtonDZWoda"
+        android:layout_width="42dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginBottom="89dp"
+        app:layout_constraintBottom_toTopOf="@+id/textDZBMIZakresOpis"
+        app:layout_constraintStart_toEndOf="@+id/editTextDZWoda"
+        app:srcCompat="@android:drawable/ic_menu_help" />
+
+    <Button
+        android:id="@+id/buttonDZCalculateBMI"
+        android:layout_width="80dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="257dp"
+        android:text="Oblicz"
+        android:onClick="buttonBMIOblicz"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textDZBMIZakresOpis" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
