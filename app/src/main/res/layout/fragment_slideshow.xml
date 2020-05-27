@@ -11,11 +11,7 @@
         android:id="@+id/textHWitaj"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="29dp"
-        android:layout_marginRight="29dp"
+        android:layout_marginTop="20dp"
         android:text="ćwiczenie"
         app:layout_constraintEnd_toStartOf="@+id/buttonSSWybierzCwiczenie"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +21,7 @@
         android:id="@+id/buttonSSWybierzCwiczenie"
         android:layout_width="159dp"
         android:layout_height="38dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="120dp"
         android:layout_marginEnd="124dp"
         android:layout_marginRight="124dp"
         android:text="Wybierz ćwiczenie"
@@ -55,13 +51,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="80dp"
         android:text="Ilość serii:"
-        app:layout_constraintBottom_toTopOf="@+id/editTextSSSerie"
-        app:layout_constraintEnd_toStartOf="@+id/textSSPowtorzenia"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textHWitaj" />
 
@@ -69,30 +60,25 @@
         android:id="@+id/editTextSSSerie"
         android:layout_width="59dp"
         android:layout_height="47dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:hint="3"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/textSSCzas"
-        app:layout_constraintEnd_toStartOf="@+id/editTextSSPowtorzenia"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textSSSerie" />
 
     <EditText
         android:id="@+id/editTextSSPowtorzenia"
         android:layout_width="65dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="52dp"
-        android:layout_marginRight="52dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
         android:hint="10"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/textSSCiezar"
-        app:layout_constraintEnd_toStartOf="@+id/buttonSSDodaj"
         app:layout_constraintStart_toEndOf="@+id/editTextSSSerie"
         app:layout_constraintTop_toBottomOf="@+id/textSSPowtorzenia" />
 
@@ -100,12 +86,10 @@
         android:id="@+id/textSSPowtorzenia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
         android:layout_marginTop="60dp"
-        android:layout_marginBottom="10dp"
         android:text="Ilość powtórzeń:"
-        app:layout_constraintBottom_toTopOf="@+id/editTextSSPowtorzenia"
         app:layout_constraintStart_toEndOf="@+id/textSSSerie"
         app:layout_constraintTop_toBottomOf="@+id/buttonSSWybierzCwiczenie" />
 
@@ -113,67 +97,60 @@
         android:id="@+id/textSSCzas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginRight="76dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="28dp"
         android:text="Czas:"
-        app:layout_constraintBottom_toTopOf="@+id/editTextSSCzas"
-        app:layout_constraintEnd_toStartOf="@+id/textSSCiezar"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSSSerie" />
 
     <EditText
         android:id="@+id/editTextSSCzas"
         android:layout_width="83dp"
         android:layout_height="40dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginRight="26dp"
-        android:layout_marginBottom="376dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="00:10:00"
         android:inputType="time"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextSSCiezar"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textSSCzas" />
 
     <TextView
         android:id="@+id/textSSCiezar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="71dp"
-        android:layout_marginRight="71dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="28dp"
         android:text="Ciężar:"
-        app:layout_constraintBottom_toTopOf="@+id/editTextSSCiezar"
-        app:layout_constraintEnd_toStartOf="@+id/buttonSSDodaj"
-        app:layout_constraintStart_toEndOf="@+id/textSSCzas" />
+        app:layout_constraintStart_toEndOf="@+id/textSSCzas"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSSPowtorzenia" />
 
     <EditText
         android:id="@+id/editTextSSCiezar"
         android:layout_width="67dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
-        android:layout_marginBottom="376dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="100 kg"
         android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonSSDodaj"
-        app:layout_constraintStart_toEndOf="@+id/editTextSSCzas" />
+        app:layout_constraintStart_toEndOf="@+id/editTextSSCzas"
+        app:layout_constraintTop_toBottomOf="@+id/textSSCiezar" />
 
     <Button
         android:id="@+id/buttonSSDodaj"
         android:layout_width="117dp"
         android:layout_height="147dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="46dp"
-        android:layout_marginRight="46dp"
-        android:layout_marginBottom="360dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
         android:text="Dodaj"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSSWybierzCwiczenie" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonSSWybierzCwiczenie"
+        app:layout_constraintVertical_bias="0.396" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
