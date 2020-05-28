@@ -2,9 +2,11 @@ package com.example.gymtracker;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 
+import com.example.gymtracker.ui.SignOutDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -73,7 +75,14 @@ public class nav extends AppCompatActivity {
     }
 
 
+    public void Wyloguj(MenuItem item) {
 
+        openSignOutDialog();
 
+    }
 
+    private void openSignOutDialog() {
+        SignOutDialog dialog = new SignOutDialog();
+        dialog.show(getSupportFragmentManager(),"Wylogowanie się.");
+    }
 }

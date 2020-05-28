@@ -9,14 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Logowanie"></activity>
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:label="@string/title_activity_login" />
         <activity
             android:name=".nav"
             android:label="@string/title_activity_nav"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity android:name=".Cwiczenie" />
-        <activity android:name=".Przekierowanie"/>
-
+        <activity android:name=".Przekierowanie" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

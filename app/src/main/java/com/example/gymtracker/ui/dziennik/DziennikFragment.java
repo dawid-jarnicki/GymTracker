@@ -26,7 +26,7 @@ public class DziennikFragment extends  Fragment {
     private TextView result;
     private TextView opis;
     private Button button;
-
+    private TextView bmr;
     private DziennikViewModel dziennikViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -49,11 +49,16 @@ public class DziennikFragment extends  Fragment {
         water = view.findViewById(R.id.editTextDZWoda);
         result = view.findViewById(R.id.textDZBMIZakres);
         opis = view.findViewById(R.id.textDZBMIZakresOpis);
-
+        bmr = view.findViewById(R.id.textDZBMIZakres);
         button  = view.findViewById(R.id.buttonDZCalculateBMI);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+              //  float miesnie =
+
+              //  float bmrWartosc = Float.parseFloat()
                 calculateBMI(view);
             }
         });

@@ -1,25 +1,19 @@
 package com.example.gymtracker;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.gymtracker.ui.home.HomeFragment;
-import com.example.gymtracker.ui.home.HomeViewModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -36,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     Map<String, Object> user = new HashMap<>();
 
     EditText Nazwa, Email;
+    TextView Login;
     RadioGroup Plec;
     Button createButton;
     FirebaseAuth mAuth;
@@ -43,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     // AlertDialog.Builder alert = new AlertDialog.Builder(this);
 
+   // @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +48,17 @@ public class MainActivity extends AppCompatActivity {
         Email = findViewById(R.id.emailText);
         Plec = findViewById(R.id.radioGroupPlec);
         createButton = findViewById(R.id.buttonCreate);
+        Login = findViewById(R.id.loginText);
+
+        Login.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+               // Toast.makeText(MainActivity.this,"no co jest", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, Logowanie.class);
+                startActivity(intent);
+            }
+        });
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -104,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
 /*
     @Override
@@ -122,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         if (plec == R.id.femButton) user.put("Plec", "Kobieta");
         else user.put("Plec", "Mezczyzna");
 
-        db.collection("users").document(nazwa).set(user);
+        db.collection("users").document(email).set(user);
     }
 
 
