@@ -6,7 +6,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="?attr/homeAsUpIndicator"
+            android:icon="@drawable/ic_home"
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_gallery"
@@ -14,19 +14,19 @@
             android:title="@string/menu_gallery" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_workout"
             android:title="@string/menu_slideshow" />
         <item
         android:id="@+id/nav_cwiczenie"
-        android:icon="@drawable/ic_menu_slideshow"
+        android:icon="@drawable/ic_exercise"
         android:title="@string/menu_cwiczenie" />
         <item
             android:id="@+id/nav_dziennik"
-            android:icon="@android:drawable/stat_notify_chat"
+            android:icon="@drawable/ic_weighing_scale"
             android:title="@string/menu_dziennik" />
         <item
             android:id="@+id/nav_historia"
-            android:icon="@android:drawable/stat_notify_chat"
+            android:icon="@drawable/ic_history"
             android:title="@string/menu_historia" />
     </group>
 </menu>
