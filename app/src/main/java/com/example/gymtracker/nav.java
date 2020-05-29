@@ -5,12 +5,15 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.gymtracker.ui.SignOutDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -22,7 +25,6 @@ import androidx.appcompat.widget.Toolbar;
 
 public class nav extends AppCompatActivity {
 
-    FirebaseAuth mAuth;
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -36,6 +38,10 @@ public class nav extends AppCompatActivity {
        //     startActivity(new Intent(getApplicationContext(),MainActivity.class));
        //     finish();
        // }
+       // if (mAuth.getCurrentUser() == null)
+
+
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -58,6 +64,11 @@ public class nav extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+
+      //  Email = findViewById(R.id.textHomeName);
+        //String email = user.getEmail();
+       // Email.setText("xd");
     }
 
     @Override

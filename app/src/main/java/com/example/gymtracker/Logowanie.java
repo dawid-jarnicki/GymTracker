@@ -21,6 +21,7 @@ public class Logowanie extends AppCompatActivity {
     EditText Email;
     FirebaseAuth lAuth;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

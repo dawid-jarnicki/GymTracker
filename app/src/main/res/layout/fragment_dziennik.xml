@@ -66,7 +66,7 @@
         android:hint="35%"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButtonDZTluszcz" />
+        app:layout_constraintStart_toEndOf="@+id/helpTluszcz" />
 
     <TextView
         android:id="@+id/textDZWzrost2"
@@ -98,7 +98,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="79dp"
         android:text="BMI:"
-        app:layout_constraintStart_toEndOf="@+id/imageButtonDZBMI2"
+        app:layout_constraintStart_toEndOf="@+id/helpBMI"
         app:layout_constraintTop_toBottomOf="@+id/editTextDZTluszcz" />
 
     <TextView
@@ -116,9 +116,9 @@
         android:id="@+id/textDZFFMIZakres"
         android:layout_width="60dp"
         android:layout_height="22dp"
-        android:layout_marginStart="42dp"
-        android:layout_marginLeft="42dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="24dp"
         android:text="Zakres"
         app:layout_constraintStart_toEndOf="@+id/textDZFFMI"
         app:layout_constraintTop_toBottomOf="@+id/textDZBMIZakres" />
@@ -127,20 +127,20 @@
         android:id="@+id/textDZFFMI"
         android:layout_width="40dp"
         android:layout_height="21dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="12dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="16dp"
         android:text="FFMI:"
-        app:layout_constraintStart_toEndOf="@+id/imageButtonDZFFMI"
+        app:layout_constraintStart_toEndOf="@+id/helpFFMI"
         app:layout_constraintTop_toBottomOf="@+id/textDZBMI" />
 
     <TextView
         android:id="@+id/textDZFFMIZakresOpis"
         android:layout_width="60dp"
         android:layout_height="22dp"
-        android:layout_marginStart="39dp"
-        android:layout_marginLeft="39dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="24dp"
         android:text="Opis"
         app:layout_constraintStart_toEndOf="@+id/textDZFFMIZakres"
         app:layout_constraintTop_toBottomOf="@+id/textDZBMIZakresOpis" />
@@ -163,7 +163,7 @@
         android:layout_marginStart="63dp"
         android:layout_marginLeft="63dp"
         android:layout_marginBottom="12dp"
-        android:text="Woda:"
+        android:text="Nawodnienie"
         app:layout_constraintBottom_toTopOf="@+id/editTextDZWoda"
         app:layout_constraintStart_toEndOf="@+id/textDZTluszcz" />
 
@@ -181,7 +181,7 @@
         app:layout_constraintStart_toEndOf="@+id/editTextDZWzrost" />
 
     <ImageButton
-        android:id="@+id/imageButtonDZTluszcz"
+        android:id="@+id/helpTluszcz"
         android:layout_width="42dp"
         android:layout_height="29dp"
         android:layout_marginStart="8dp"
@@ -192,18 +192,7 @@
         app:srcCompat="@android:drawable/ic_menu_help" />
 
     <ImageButton
-        android:id="@+id/imageButtonDZFFMI"
-        android:layout_width="42dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="18dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButtonDZBMI2"
-        app:srcCompat="@android:drawable/ic_menu_help" />
-
-    <ImageButton
-        android:id="@+id/imageButtonDZBMI2"
+        android:id="@+id/helpBMI"
         android:layout_width="42dp"
         android:layout_height="29dp"
         android:layout_marginStart="16dp"
@@ -214,7 +203,7 @@
         app:srcCompat="@android:drawable/ic_menu_help" />
 
     <ImageButton
-        android:id="@+id/imageButtonDZWoda"
+        android:id="@+id/helpNawodnienie"
         android:layout_width="42dp"
         android:layout_height="29dp"
         android:layout_marginStart="13dp"
@@ -242,7 +231,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textDZBMRZakres" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/helpBMR"
         android:layout_width="42dp"
         android:layout_height="29dp"
         android:layout_marginStart="16dp"
@@ -250,7 +239,7 @@
         android:layout_marginTop="9dp"
         android:src="@android:drawable/ic_menu_help"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButtonDZFFMI" />
+        app:layout_constraintTop_toBottomOf="@+id/textDZFFMI" />
 
     <TextView
         android:id="@+id/textDZBMR"
@@ -258,9 +247,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="16dp"
         android:text="BMR:"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintStart_toEndOf="@+id/helpBMR"
         app:layout_constraintTop_toBottomOf="@+id/textDZFFMI" />
 
     <TextView
@@ -284,5 +273,16 @@
         android:text="Opis"
         app:layout_constraintStart_toEndOf="@+id/textDZBMRZakres"
         app:layout_constraintTop_toBottomOf="@+id/textDZFFMIZakresOpis" />
+
+    <ImageButton
+        android:id="@+id/helpFFMI"
+        android:layout_width="43dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:src="@android:drawable/ic_menu_help"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/helpBMI" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
