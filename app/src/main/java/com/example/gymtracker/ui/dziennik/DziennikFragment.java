@@ -1,17 +1,17 @@
 package com.example.gymtracker.ui.dziennik;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.gymtracker.R;
@@ -28,6 +28,12 @@ public class DziennikFragment extends  Fragment {
     private Button button;
     private TextView bmr;
     private DziennikViewModel dziennikViewModel;
+    private ImageButton FatHelp;
+    private ImageButton WaterHelp;
+    private ImageButton BMIHelp;
+    private ImageButton FFMIHelp;
+    private ImageButton BMRHelp;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -51,6 +57,55 @@ public class DziennikFragment extends  Fragment {
         opis = view.findViewById(R.id.textDZBMIZakresOpis);
         bmr = view.findViewById(R.id.textDZBMIZakres);
         button  = view.findViewById(R.id.buttonDZCalculateBMI);
+
+        FatHelp = view.findViewById(R.id.helpTluszcz);
+        WaterHelp = view.findViewById(R.id.helpNawodnienie);
+        BMIHelp = view.findViewById(R.id.helpBMI);
+        FFMIHelp = view.findViewById(R.id.helpFFMI);
+        BMRHelp = view.findViewById(R.id.helpBMR);
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+
+        FatHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                builder.setMessage("Procent tkanki tłuszczowej");
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
+        WaterHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                builder.setMessage("Nawodnienie organizmu");
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
+        BMIHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                builder.setMessage("Wskaźnik masy ciała");
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
+        FFMIHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                builder.setMessage("Wskaźnik masy mięśni w ciele");
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
+        BMRHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                builder.setMessage("Zapotrzebowanie kaloryczne");
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

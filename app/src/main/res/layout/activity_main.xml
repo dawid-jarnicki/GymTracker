@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.1" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/emailTextView"
         android:layout_width="341dp"
         android:layout_height="25dp"
         android:text="Aby korzystać z aplikacji musisz utworzyć swój profil."
@@ -41,7 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextView"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
