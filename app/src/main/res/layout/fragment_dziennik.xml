@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.dziennik.DziennikFragment">
+    tools:context="ui.dziennik.DziennikFragment">
 
     <TextView
         android:id="@+id/textDZWitaj"
@@ -94,7 +94,7 @@
         android:ems="10"
         android:hint="35%"
         android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/imageButtonDZTluszcz"
+        app:layout_constraintStart_toEndOf="@+id/helpTluszcz"
         app:layout_constraintTop_toBottomOf="@+id/textDZWoda" />
 
     <TextView
@@ -120,7 +120,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextDZWoda" />
 
     <ImageButton
-        android:id="@+id/imageButtonDZBMI2"
+        android:id="@+id/helpBMI"
         android:layout_width="40dp"
         android:layout_height="22dp"
         android:layout_marginStart="30dp"
@@ -131,18 +131,18 @@
         app:srcCompat="@android:drawable/ic_menu_help" />
 
     <ImageButton
-        android:id="@+id/imageButtonDZFFMI"
+        android:id="@+id/helpFFMI"
         android:layout_width="40dp"
         android:layout_height="22dp"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="27dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButtonDZBMI2"
+        app:layout_constraintTop_toBottomOf="@+id/helpBMI"
         app:srcCompat="@android:drawable/ic_menu_help" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/helpBMR"
         android:layout_width="40dp"
         android:layout_height="22dp"
         android:layout_marginStart="30dp"
@@ -150,7 +150,7 @@
         android:layout_marginTop="25dp"
         android:src="@android:drawable/ic_menu_help"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButtonDZFFMI" />
+        app:layout_constraintTop_toBottomOf="@+id/helpFFMI" />
 
     <TextView
         android:id="@+id/textDZBMR"
@@ -160,7 +160,7 @@
         android:layout_marginLeft="1dp"
         android:layout_marginTop="25dp"
         android:text="BMR:"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintStart_toEndOf="@+id/helpBMR"
         app:layout_constraintTop_toBottomOf="@+id/textDZFFMI" />
 
     <TextView
@@ -171,7 +171,7 @@
         android:layout_marginLeft="1dp"
         android:layout_marginTop="29dp"
         android:text="FFMI:"
-        app:layout_constraintStart_toEndOf="@+id/imageButtonDZFFMI"
+        app:layout_constraintStart_toEndOf="@+id/helpFFMI"
         app:layout_constraintTop_toBottomOf="@+id/textDZBMI" />
 
     <TextView
@@ -180,8 +180,8 @@
         android:layout_height="21dp"
         android:layout_marginTop="75dp"
         android:text="BMI:"
-        app:layout_constraintStart_toEndOf="@+id/imageButtonDZBMI2"
-        app:layout_constraintTop_toBottomOf="@+id/imageButtonDZTluszcz" />
+        app:layout_constraintStart_toEndOf="@+id/helpBMI"
+        app:layout_constraintTop_toBottomOf="@+id/helpTluszcz" />
 
     <TextView
         android:id="@+id/textDZFFMIZakres"
@@ -207,18 +207,18 @@
 
     <TextView
         android:id="@+id/textDZBMROpis"
-        android:layout_width="78dp"
+        android:layout_width="wrap_content"
         android:layout_height="22dp"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="25dp"
-        android:text="Opis"
+        android:text="Kalorii"
         app:layout_constraintStart_toEndOf="@+id/textDZBMRZakres"
         app:layout_constraintTop_toBottomOf="@+id/textDZFFMIZakresOpis" />
 
     <TextView
         android:id="@+id/textDZFFMIZakresOpis"
-        android:layout_width="79dp"
+        android:layout_width="wrap_content"
         android:layout_height="22dp"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
@@ -229,12 +229,12 @@
 
     <TextView
         android:id="@+id/textDZBMIZakresOpis"
-        android:layout_width="80dp"
+        android:layout_width="wrap_content"
         android:layout_height="22dp"
         android:layout_marginTop="76dp"
         android:text="Opis"
         app:layout_constraintStart_toEndOf="@+id/textDZBMIZakres"
-        app:layout_constraintTop_toBottomOf="@+id/imageButtonDZWoda" />
+        app:layout_constraintTop_toBottomOf="@+id/helpNawodnienie" />
 
     <TextView
         android:id="@+id/textDZTluszcz"
@@ -272,7 +272,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textDZWaga" />
 
     <ImageButton
-        android:id="@+id/imageButtonDZTluszcz"
+        android:id="@+id/helpTluszcz"
         android:layout_width="42dp"
         android:layout_height="29dp"
         android:layout_marginStart="7dp"
@@ -283,7 +283,7 @@
         app:srcCompat="@android:drawable/ic_menu_help" />
 
     <ImageButton
-        android:id="@+id/imageButtonDZWoda"
+        android:id="@+id/helpNawodnienie"
         android:layout_width="42dp"
         android:layout_height="29dp"
         android:layout_marginStart="12dp"

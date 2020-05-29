@@ -1,6 +1,7 @@
 package com.example.gymtracker.ui.dziennik;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -24,7 +26,13 @@ public class DziennikFragment extends  Fragment {
     private EditText fat;
     private EditText water;
     private TextView result;
+    private TextView result1;
+    private TextView result2;
     private TextView opis;
+    private TextView opis1;
+    private TextView opis2;
+    private TextView test1;
+    private TextView test2;
     private Button button;
     private TextView bmr;
     private DziennikViewModel dziennikViewModel;
@@ -54,8 +62,14 @@ public class DziennikFragment extends  Fragment {
         fat = view.findViewById(R.id.editTextDZTluszcz);
         water = view.findViewById(R.id.editTextDZWoda);
         result = view.findViewById(R.id.textDZBMIZakres);
+        result1 =view.findViewById(R.id.textDZFFMIZakres);
+        result2 =view.findViewById(R.id.textDZBMRZakres);
         opis = view.findViewById(R.id.textDZBMIZakresOpis);
-        bmr = view.findViewById(R.id.textDZBMIZakres);
+        opis1 = view.findViewById(R.id.textDZFFMIZakresOpis);
+        opis2 = view.findViewById(R.id.textDZBMROpis);
+
+
+       // bmr = view.findViewById(R.id.textDZBMIZakres);
         button  = view.findViewById(R.id.buttonDZCalculateBMI);
 
         FatHelp = view.findViewById(R.id.helpTluszcz);
@@ -115,8 +129,11 @@ public class DziennikFragment extends  Fragment {
 
               //  float bmrWartosc = Float.parseFloat()
                 calculateBMI(view);
+                calculateFFMI(view);
+
             }
         });
+
     }
 
     private void displayBMI(float bmi) {
@@ -166,6 +183,73 @@ public class DziennikFragment extends  Fragment {
             float bmi = weightValue / (heightValue * heightValue);
 
             displayBMI(bmi);
+        }
+    }
+
+    private void displayFFMI(float FFMI) {
+        String ffmiLabel = null;
+        String fdesc = null;
+        if (Float.compare(FFMI, 17f) <= 0) {
+            ffmiLabel = getString(R.string.very_severely_underweight);
+            fdesc = "Poniżej przeciętnej";
+        } else if (Float.compare(FFMI, 17f) > 0  &&  Float.compare(FFMI, 19f) <= 0) {
+            ffmiLabel = getString(R.string.severely_underweight);
+            fdesc = "Przeciętne";
+        } else if (Float.compare(FFMI, 19f) > 0  &&  Float.compare(FFMI, 21f) <= 0) {
+            ffmiLabel = getString(R.string.underweight);
+            fdesc = "Ponad przeciętne";
+        } else if (Float.compare(FFMI, 21f) > 0  &&  Float.compare(FFMI, 22f) <= 0) {
+            ffmiLabel = getString(R.string.normal);
+            fdesc = "Bardzo dobre";
+        } else if (Float.compare(FFMI, 22f) > 0  &&  Float.compare(FFMI, 25f) <= 0) {
+            ffmiLabel = getString(R.string.overweight);
+            fdesc = "Doskonałe";
+        } else if (Float.compare(FFMI, 25f) > 0  &&  Float.compare(FFMI, 27f) <= 0) {
+            ffmiLabel = getString(R.string.obese_class_i);
+            fdesc = "Prawdopobone użycie sterydów";
+        } else if (Float.compare(FFMI, 27f) > 0  &&  Float.compare(FFMI, 30f) <= 0) {
+            ffmiLabel = getString(R.string.obese_class_ii);
+            fdesc = "Bardzo prawdopodobne użycie sterydów";
+        }
+
+
+        ffmiLabel = FFMI + "\n\n" + ffmiLabel;
+
+        result1.setText(ffmiLabel);
+        opis1.setText(fdesc);
+
+    }
+
+    public void calculateFFMI(View view) {
+        String heightStr = height.getText().toString();
+        String weightStr = weight.getText().toString();
+        String fatStr = fat.getText().toString();
+
+        if (heightStr != null && !"".equals(heightStr)
+                && weightStr != null  &&  !"".equals(weightStr ) && fatStr != null && !"".equals(fatStr) )
+        {
+
+
+            float heightValue = Float.parseFloat(heightStr) / 100;
+            float weightValue = Float.parseFloat(weightStr);
+            float fatValue = Float.parseFloat(fatStr)/100;
+
+            float bodyfat  = (float)(weightValue * fatValue);
+
+
+
+
+
+            float ffm =(float)(weightValue * (1.0f-bodyfat/100));
+            float ah = 370f + (21.6f * ffm);
+            String aha =  ah + "\n\n";
+            result2.setText(aha);
+            float ffmi = (float)(ffm/(heightValue*heightValue));
+
+           // float nffmi = (float) (ffmi + 6.1f * (1.8f - heightValue));
+            //float bmi = weightValue / (heightValue * heightValue);
+
+            displayFFMI(ffmi);
         }
     }
 }
