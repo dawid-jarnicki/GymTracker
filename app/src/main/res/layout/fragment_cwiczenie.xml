@@ -86,7 +86,7 @@
 
     <ScrollView
 
-        android:id="@+id/scrollList"
+        android:id="@+id/scrollListCw"
         android:layout_width="368dp"
         android:layout_height="410dp"
         android:layout_marginStart="16dp"

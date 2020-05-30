@@ -7,38 +7,14 @@
     tools:context=".ui.slideshow.SlideshowFragment">
 
 
-    <TextView
-        android:id="@+id/textHWitaj"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="28dp"
-        android:text="ćwiczenie"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
-
     <Button
-        android:id="@+id/buttonSSWybierzCwiczenie"
+        android:id="@+id/buttonZapiszTrening"
         android:layout_width="wrap_content"
         android:layout_height="38dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="120dp"
-        android:text="Wybierz ćwiczenie"
-        app:layout_constraintStart_toEndOf="@+id/textHWitaj"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="44dp"
-        android:src="@mipmap/ic_launcher_round"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="32dp"
+        android:text="Zapisz trening"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="254dp" />
 
     <TextView
         android:id="@+id/textSSSerie"
@@ -46,32 +22,33 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
         android:layout_marginLeft="22dp"
-        android:layout_marginTop="100dp"
         android:layout_marginEnd="44dp"
         android:layout_marginRight="44dp"
         android:text="Ilość serii:"
         app:layout_constraintEnd_toStartOf="@+id/textSSPowtorzenia"
+        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textHWitaj" />
+        tools:layout_editor_absoluteY="127dp" />
 
     <EditText
-        android:id="@+id/editTextSSSerie"
+        android:id="@+id/editTextSerie"
         android:layout_width="59dp"
         android:layout_height="47dp"
         android:layout_marginStart="21dp"
         android:layout_marginLeft="21dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="53dp"
         android:layout_marginRight="53dp"
         android:ems="10"
         android:hint="3"
         android:inputType="number"
-        app:layout_constraintEnd_toStartOf="@+id/editTextSSPowtorzenia"
+        app:layout_constraintEnd_toStartOf="@+id/editTextPowtorzenia"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textSSSerie" />
 
     <EditText
-        android:id="@+id/editTextSSPowtorzenia"
+        android:id="@+id/editTextPowtorzenia"
         android:layout_width="65dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
@@ -87,10 +64,12 @@
         android:id="@+id/textSSPowtorzenia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="81dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:text="Ilość powtórzeń:"
         app:layout_constraintEnd_toStartOf="@+id/buttonSSDodaj"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSSWybierzCwiczenie" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonZapiszTrening" />
 
     <TextView
         android:id="@+id/textSSCzas"
@@ -104,10 +83,10 @@
         android:text="Czas:"
         app:layout_constraintEnd_toStartOf="@+id/textSSCiezar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSSSerie" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSerie" />
 
     <EditText
-        android:id="@+id/editTextSSCzas"
+        android:id="@+id/editTextCzas"
         android:layout_width="83dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
@@ -118,7 +97,7 @@
         android:ems="10"
         android:hint="00:10:00"
         android:inputType="time"
-        app:layout_constraintEnd_toStartOf="@+id/editTextSSCiezar"
+        app:layout_constraintEnd_toStartOf="@+id/editTextCiezar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textSSCzas" />
 
@@ -131,10 +110,10 @@
         android:layout_marginRight="53dp"
         android:text="Ciężar:"
         app:layout_constraintEnd_toStartOf="@+id/buttonSSDodaj"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSSPowtorzenia" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPowtorzenia" />
 
     <EditText
-        android:id="@+id/editTextSSCiezar"
+        android:id="@+id/editTextCiezar"
         android:layout_width="67dp"
         android:layout_height="40dp"
         android:layout_marginTop="11dp"
@@ -150,11 +129,31 @@
         android:id="@+id/buttonSSDodaj"
         android:layout_width="117dp"
         android:layout_height="147dp"
-        android:layout_marginTop="118dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
         android:text="Dodaj"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSSWybierzCwiczenie" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonZapiszTrening" />
+
+    <Spinner
+        android:id="@+id/spinnerCwWybor"
+        android:layout_width="291dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTrening"
+        android:layout_width="371dp"
+        android:layout_height="265dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
