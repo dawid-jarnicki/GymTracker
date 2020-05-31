@@ -101,7 +101,7 @@ public class HistoriaFragment extends  Fragment {
                                     String Is ="Ilość serii";
                                     String C ="Brany ciężar";
                                     String P ="Powtorzenia";
-                                    String Cz ="Czas ćwiczenia";
+                                    String Cz ="Ilość czasu";
 
 
                                     data += String.format("%1$-15s\t%2$-15s\t%3$-15s\t%4$-15s\t%5$-15s \n %6$-18s\t%7$7s\t%8$25s\t%9$25s\t%10$13s\n\n",cwNazwa,Is,P,C,Cz,cwTime,cwIlosc,cwPowtorzenia,cwCiezar,cwCzas);
