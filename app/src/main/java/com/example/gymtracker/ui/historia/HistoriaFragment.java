@@ -99,9 +99,16 @@ public class HistoriaFragment extends  Fragment {
                                     String cwCzas = (String) cw.get("Czas");
                                     String cwTime = (String) cw.get("Czas wykonania");
 
-                                    data += cwNazwa+"\t\t\t\t\t\t\t\tIlosc\t\t\tPowtorzenia\t\t\tCiezar\t\t\tCzas\n"+cwTime+"\t\t\t\t"+cwIlosc+"\t\t\t\t\t"+cwPowtorzenia+"\t\t\t\t\t\t\t\t\t\t\t\t"+cwCiezar+"\t\t\t\t\t\t\t"+cwCzas+"\n\n";
 
+                                    String Is ="Ilość serii";
+                                    String C ="Brany ciężar";
+                                    String P ="Powtorzenia";
+                                    String Cz ="Czas ćwiczenia";
+
+
+                                    data += String.format("%1$15s\t%2$15s\t%3$15s\t%4$15s\t%5$15s \n %6$10s\t%7$20s\t%8$20s\t%9$25s\t%10$25s\n\n",cwNazwa,Is,P,C,Cz,cwTime,cwIlosc,cwPowtorzenia,cwCiezar,cwCzas);
                                 }
+
                                 Historia.setText(data);
                             }
                         });

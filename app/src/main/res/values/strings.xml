@@ -1,4 +1,5 @@
 <resources>
+    <string name="tab">\u0009\u0009\u0009\u0009</string>
     <string name="app_name">GymTracker</string>
     <string name="witaj">Witaj w GymTracker</string>
     <string name="title_activity_nav">Nav</string>

@@ -11,24 +11,23 @@
         android:id="@+id/buttonZapiszTrening"
         android:layout_width="wrap_content"
         android:layout_height="38dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="72dp"
         android:text="Zapisz trening"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="254dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textSSSerie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginLeft="22dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="80dp"
         android:text="Ilość serii:"
-        app:layout_constraintEnd_toStartOf="@+id/textSSPowtorzenia"
-        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="127dp" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCwWybor" />
 
     <EditText
         android:id="@+id/editTextSerie"
@@ -36,14 +35,10 @@
         android:layout_height="47dp"
         android:layout_marginStart="21dp"
         android:layout_marginLeft="21dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="53dp"
-        android:layout_marginRight="53dp"
+        android:layout_marginTop="17dp"
         android:ems="10"
         android:hint="3"
         android:inputType="number"
-        app:layout_constraintEnd_toStartOf="@+id/editTextPowtorzenia"
-        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textSSSerie" />
 
@@ -51,53 +46,47 @@
         android:id="@+id/editTextPowtorzenia"
         android:layout_width="65dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="77dp"
+        android:layout_marginLeft="77dp"
         android:layout_marginTop="18dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
         android:ems="10"
         android:hint="10"
         android:inputType="number"
-        app:layout_constraintEnd_toStartOf="@+id/buttonSSDodaj"
+        app:layout_constraintStart_toEndOf="@+id/editTextSerie"
         app:layout_constraintTop_toBottomOf="@+id/textSSPowtorzenia" />
 
     <TextView
         android:id="@+id/textSSPowtorzenia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="35dp"
         android:text="Ilość powtórzeń:"
-        app:layout_constraintEnd_toStartOf="@+id/buttonSSDodaj"
+        app:layout_constraintStart_toEndOf="@+id/textSSSerie"
         app:layout_constraintTop_toBottomOf="@+id/buttonZapiszTrening" />
 
     <TextView
         android:id="@+id/textSSCzas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginLeft="21dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="79dp"
-        android:layout_marginRight="79dp"
         android:text="Czas:"
-        app:layout_constraintEnd_toStartOf="@+id/textSSCiezar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextSerie" />
 
     <EditText
         android:id="@+id/editTextCzas"
-        android:layout_width="83dp"
+        android:layout_width="72dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:layout_marginTop="9dp"
         android:ems="10"
         android:hint="00:10:00"
         android:inputType="time"
-        app:layout_constraintEnd_toStartOf="@+id/editTextCiezar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textSSCzas" />
 
@@ -105,55 +94,73 @@
         android:id="@+id/textSSCiezar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="105dp"
+        android:layout_marginLeft="105dp"
         android:layout_marginTop="22dp"
-        android:layout_marginEnd="53dp"
-        android:layout_marginRight="53dp"
         android:text="Ciężar:"
-        app:layout_constraintEnd_toStartOf="@+id/buttonSSDodaj"
+        app:layout_constraintStart_toEndOf="@+id/textSSCzas"
         app:layout_constraintTop_toBottomOf="@+id/editTextPowtorzenia" />
 
     <EditText
         android:id="@+id/editTextCiezar"
         android:layout_width="67dp"
         android:layout_height="40dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginLeft="59dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="100 kg"
         android:inputType="numberDecimal"
-        app:layout_constraintEnd_toStartOf="@+id/buttonSSDodaj"
+        app:layout_constraintStart_toEndOf="@+id/editTextCzas"
         app:layout_constraintTop_toBottomOf="@+id/textSSCiezar" />
 
     <Button
         android:id="@+id/buttonSSDodaj"
         android:layout_width="117dp"
         android:layout_height="147dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="73dp"
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
+        android:layout_marginBottom="39dp"
         android:text="Dodaj"
+        app:layout_constraintBottom_toTopOf="@+id/scrollViewTrening"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonZapiszTrening" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCwWybor" />
 
     <Spinner
         android:id="@+id/spinnerCwWybor"
-        android:layout_width="291dp"
+        android:layout_width="wrap_content"
         android:layout_height="33dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textViewTrening"
-        android:layout_width="371dp"
-        android:layout_height="265dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <ScrollView
+        android:id="@+id/scrollViewTrening"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCiezar">
+
+
+        <TextView
+            android:id="@+id/textViewTrening"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
