@@ -126,6 +126,7 @@
         android:layout_marginLeft="116dp"
         android:layout_marginTop="28dp"
         android:text="Masz już konto? Kliknij tutaj."
+        android:textColor="@android:color/holo_blue_light"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 

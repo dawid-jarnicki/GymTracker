@@ -7,9 +7,9 @@
     tools:context=".ui.historia.HistoriaFragment">
 
     <TextView
-        android:id="@+id/textHWitaj"
-        android:layout_width="107dp"
-        android:layout_height="41dp"
+        android:id="@+id/textHistoria"
+        android:layout_width="361dp"
+        android:layout_height="449dp"
         android:layout_marginStart="152dp"
         android:layout_marginLeft="152dp"
         android:layout_marginTop="243dp"
@@ -19,6 +19,18 @@
         android:text="@string/menu_historia"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.244" />
+
+    <Spinner
+        android:id="@+id/spinnerDzien"
+        android:layout_width="348dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="52dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
