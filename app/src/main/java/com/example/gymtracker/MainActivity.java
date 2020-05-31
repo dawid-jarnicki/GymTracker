@@ -1,18 +1,17 @@
 package com.example.gymtracker;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -34,17 +33,16 @@ public class MainActivity extends AppCompatActivity {
     RadioGroup Plec;
     Button createButton;
     FirebaseAuth mAuth;
-    ProgressBar progressBar;
+    EditText Haslo;
 
-    // AlertDialog.Builder alert = new AlertDialog.Builder(this);
 
-   // @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         Nazwa = findViewById(R.id.nazwaId);
+        Haslo = findViewById(R.id.hasloId);
         Email = findViewById(R.id.emailText);
         Plec = findViewById(R.id.radioGroupPlec);
         createButton = findViewById(R.id.buttonCreate);
@@ -54,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
         {
             @Override
             public void onClick(View v) {
-               // Toast.makeText(MainActivity.this,"no co jest", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, Logowanie.class);
                 startActivity(intent);
             }
@@ -62,15 +59,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         mAuth = FirebaseAuth.getInstance();
-        //  progressBar = findViewById(R.id.bar);
+
 
         if (mAuth.getCurrentUser() != null)
         {
-            FirebaseUser user = mAuth.getCurrentUser();
-            String name = user.getEmail();
-          //  user.delete();
             Intent intent = new Intent(MainActivity.this,nav.class);
-            Toast.makeText(MainActivity.this,name, Toast.LENGTH_SHORT).show();
             startActivity(intent);
         }
 
@@ -80,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final String email = Email.getText().toString();
                 final String nazwa = Nazwa.getText().toString();
+                final String haslo = Haslo.getText().toString();
                 final int plec = Plec.getCheckedRadioButtonId();
                 if (TextUtils.isEmpty(email)) {
                     Email.setError("Email jest wymagany !");
@@ -89,10 +83,17 @@ public class MainActivity extends AppCompatActivity {
                     Nazwa.setError("Nazwa jest wymagana !");
                     return;
                 }
-
+                if (TextUtils.isEmpty(nazwa)) {
+                    Nazwa.setError("Nazwa jest wymagana !");
+                    return;
+                }
+                if (haslo.length() < 6) {
+                    Nazwa.setError("Haslo musi się składać z co najmniej 6 znaków !");
+                    return;
+                }
                 //rejestracja
 
-                mAuth.createUserWithEmailAndPassword(email, "xxxxxx").addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                mAuth.createUserWithEmailAndPassword(email, haslo).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
@@ -100,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
 
                             //dodanie do bazy danych
                             Dodaj(nazwa, email, plec);
-                           // startActivity(new Intent(getApplicationContext(), nav.class));
                             Intent intent = new Intent(MainActivity.this,nav.class);
                             startActivity(intent);
                         } else {
@@ -114,15 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-/*
-    @Override
-    public void onStart()
-        {
-            super.onStart();
-            FirebaseUser currentUser = mAuth.getCurrentUser();
-        }
 
-    } */
 
     public void Dodaj(String nazwa, String email, int plec) {
 

@@ -10,9 +10,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.gymtracker.R;
@@ -106,7 +104,7 @@ public class HistoriaFragment extends  Fragment {
                                     String Cz ="Czas ćwiczenia";
 
 
-                                    data += String.format("%1$15s\t%2$15s\t%3$15s\t%4$15s\t%5$15s \n %6$10s\t%7$20s\t%8$20s\t%9$25s\t%10$25s\n\n",cwNazwa,Is,P,C,Cz,cwTime,cwIlosc,cwPowtorzenia,cwCiezar,cwCzas);
+                                    data += String.format("%1$-15s\t%2$-15s\t%3$-15s\t%4$-15s\t%5$-15s \n %6$-18s\t%7$7s\t%8$25s\t%9$25s\t%10$13s\n\n",cwNazwa,Is,P,C,Cz,cwTime,cwIlosc,cwPowtorzenia,cwCiezar,cwCzas);
                                 }
 
                                 Historia.setText(data);

@@ -2,7 +2,6 @@ package com.example.gymtracker.ui.cwiczenie;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,18 +12,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.gymtracker.R;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -32,7 +26,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.HashMap;
 import java.util.Map;
 
-import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class CwiczenieFragment extends Fragment {
 
@@ -94,22 +87,6 @@ public class CwiczenieFragment extends Fragment {
 
                 db.collection("users").document(email).collection("Cwiczenia").document(nazwa).set(cwiczenie);
                  Toast.makeText(getContext(),"Pomyślnie dodano ćwiczenie.", Toast.LENGTH_SHORT).show();
-                 //   db.collection("users/"+email+"/"+nazwa)
-                 //       .add(cwiczenie)
-                 //       .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                 //           @Override
-                 //           public void onSuccess(DocumentReference documentReference) {
-                 //               Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                 //           }
-                 //       })
-                 //       .addOnFailureListener(new OnFailureListener() {
-                 //           @Override
-                 //           public void onFailure(@NonNull Exception e) {
-                //                Log.w(TAG, "Error adding document", e);
-                 //           }
-                 //       });
-
-
             }
         });
 

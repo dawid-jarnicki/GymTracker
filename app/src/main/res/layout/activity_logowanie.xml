@@ -7,6 +7,18 @@
     tools:context=".Logowanie">
 
     <EditText
+        android:id="@+id/hasloTextLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="316dp"
+        android:ems="10"
+        android:hint="Hasło"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
         android:id="@+id/emailTextLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -5,19 +5,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.gymtracker.R;
-import com.example.gymtracker.nav;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+
+import java.util.Map;
+
+
 
 public class HomeFragment extends Fragment {
 
@@ -25,9 +29,8 @@ public class HomeFragment extends Fragment {
     private TextView Email;
     private FirebaseAuth Auth;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-
+    private TextView Nazwa;
     private HomeViewModel homeViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
@@ -39,14 +42,28 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         Email = view.findViewById(R.id.textHomeMail);
+        Nazwa = view.findViewById(R.id.textHomeName);
         Auth = FirebaseAuth.getInstance();
         if (Auth.getCurrentUser() != null) user = Auth.getCurrentUser();
-
         String email = user.getEmail();
-       // String email = "xd";
         Email.setText(email);
 
+        db.collection("users").document(email).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    final Map<String, Object> cw;
+                    cw = document.getData();
+
+                    String nazwa = (String) cw.get("Nazwa");
+                    Nazwa.setText(nazwa);
+                }
+            }
+        });
+
     }
+
 
 
     }

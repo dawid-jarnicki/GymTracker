@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.slideshow.SlideshowFragment">
 
+    <Chronometer
+
+        android:id="@+id/chronometer2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonZapiszTrening"
@@ -118,14 +130,12 @@
         android:id="@+id/buttonSSDodaj"
         android:layout_width="117dp"
         android:layout_height="147dp"
-        android:layout_marginTop="73dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="39dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
         android:text="Dodaj"
-        app:layout_constraintBottom_toTopOf="@+id/scrollViewTrening"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerCwWybor" />
+        app:layout_constraintTop_toBottomOf="@+id/chronometer2" />
 
     <Spinner
         android:id="@+id/spinnerCwWybor"
@@ -162,5 +172,35 @@
             app:layout_constraintStart_toStartOf="parent" />
 
     </ScrollView>
+
+    <Button
+        android:id="@+id/buttonStart"
+        android:layout_width="71dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        android:text="Start"
+        app:layout_constraintEnd_toStartOf="@+id/buttonReset"
+        app:layout_constraintTop_toBottomOf="@+id/chronometer2"
+        android:onClick="startChronometer"/>
+
+    <Button
+        android:id="@+id/buttonStop"
+        android:layout_width="71dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="52dp"
+        android:text="Stop"
+        android:onClick="stopChronometer"
+        app:layout_constraintEnd_toStartOf="@+id/buttonReset"
+        app:layout_constraintTop_toBottomOf="@+id/chronometer2" />
+
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="90dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="16dp"
+        android:text="Reset"
+        android:onClick="resetChronometer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chronometer2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

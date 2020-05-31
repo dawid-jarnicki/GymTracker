@@ -31,10 +31,7 @@ public class DziennikFragment extends  Fragment {
     private TextView opis;
     private TextView opis1;
     private TextView opis2;
-    private TextView test1;
-    private TextView test2;
     private Button button;
-    private TextView bmr;
     private DziennikViewModel dziennikViewModel;
     private ImageButton FatHelp;
     private ImageButton WaterHelp;
@@ -56,7 +53,6 @@ public class DziennikFragment extends  Fragment {
     public void onViewCreated(final View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        //initialize your view here for use view.findViewById("your view id")
         height = view.findViewById(R.id.editTextDZWzrost);
         weight = view.findViewById(R.id.editTextDZWaga);
         fat = view.findViewById(R.id.editTextDZTluszcz);
@@ -67,9 +63,6 @@ public class DziennikFragment extends  Fragment {
         opis = view.findViewById(R.id.textDZBMIZakresOpis);
         opis1 = view.findViewById(R.id.textDZFFMIZakresOpis);
         opis2 = view.findViewById(R.id.textDZBMROpis);
-
-
-       // bmr = view.findViewById(R.id.textDZBMIZakres);
         button  = view.findViewById(R.id.buttonDZCalculateBMI);
 
         FatHelp = view.findViewById(R.id.helpTluszcz);
@@ -124,10 +117,6 @@ public class DziennikFragment extends  Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-              //  float miesnie =
-
-              //  float bmrWartosc = Float.parseFloat()
                 calculateBMI(view);
                 calculateFFMI(view);
 
@@ -234,20 +223,18 @@ public class DziennikFragment extends  Fragment {
             float weightValue = Float.parseFloat(weightStr);
             float fatValue = Float.parseFloat(fatStr)/100;
 
-            float bodyfat  = (float)(weightValue * fatValue);
+            float bodyfat  = weightValue * fatValue;
 
 
 
 
 
-            float ffm =(float)(weightValue * (1.0f-bodyfat/100));
+            float ffm = weightValue * (1.0f-bodyfat/100);
             float ah = 370f + (21.6f * ffm);
             String aha =  ah + "\n\n";
             result2.setText(aha);
-            float ffmi = (float)(ffm/(heightValue*heightValue));
+            float ffmi = ffm/(heightValue*heightValue);
 
-           // float nffmi = (float) (ffmi + 6.1f * (1.8f - heightValue));
-            //float bmi = weightValue / (heightValue * heightValue);
 
             displayFFMI(ffmi);
         }

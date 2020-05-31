@@ -53,38 +53,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textHomeName" />
 
-    <TextView
-        android:id="@+id/textHomeWzrost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="24dp"
-        android:text="Wzrost"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textHomeMail" />
-
-    <TextView
-        android:id="@+id/textHomeWaga"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="20dp"
-        android:text="Waga"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textHomeWzrost" />
-
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageViewProfilePhoto"
         android:layout_width="139dp"
         android:layout_height="151dp"
-        android:layout_marginStart="128dp"
-        android:layout_marginLeft="128dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
         android:layout_marginTop="24dp"
-        app:layout_constraintStart_toEndOf="@+id/textHomeWzrost"
+        app:layout_constraintStart_toEndOf="@+id/textHomeName"
         app:layout_constraintTop_toBottomOf="@+id/textHomeWelcome"
-        tools:srcCompat="@drawable/ic_avatardefault" />
+        app:srcCompat="@drawable/ic_avatardefault"
+        tools:ignore="VectorDrawableCompat" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

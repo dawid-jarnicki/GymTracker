@@ -20,7 +20,7 @@ public class Logowanie extends AppCompatActivity {
     Button Loguj;
     EditText Email;
     FirebaseAuth lAuth;
-
+    EditText Haslo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +29,15 @@ public class Logowanie extends AppCompatActivity {
 
         Loguj = findViewById(R.id.logowanieButton);
         Email = findViewById(R.id.emailTextLogin);
+        Haslo = findViewById(R.id.hasloTextLogin);
         Loguj.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 lAuth = FirebaseAuth.getInstance();
                 String email = Email.getText().toString();
-
-                lAuth.signInWithEmailAndPassword(email, "xxxxxx").addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                String haslo = Haslo.getText().toString();
+                lAuth.signInWithEmailAndPassword(email, haslo).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {

@@ -3,11 +3,13 @@ package com.example.gymtracker.ui.slideshow;
 import android.icu.text.DecimalFormat;
 import android.icu.text.MeasureFormat;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -52,6 +54,14 @@ public class SlideshowFragment extends Fragment {
     private FirebaseUser user ;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private int ilosc = 0;
+
+    private Chronometer Chronometer;
+    private Button Start;
+    private Button Stop;
+    private Button Reset;
+    private boolean running;
+    private long pauseOffset;
+
     private SlideshowViewModel slideshowViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -73,6 +83,16 @@ public class SlideshowFragment extends Fragment {
         Powtorzenia = view.findViewById(R.id.editTextPowtorzenia);
         Czas = view.findViewById(R.id.editTextCzas);
         TreningLista = view.findViewById(R.id.textViewTrening);
+
+        Chronometer = view.findViewById(R.id.chronometer2);
+        Chronometer.setFormat("Time: %s");
+        Chronometer.setBase(SystemClock.elapsedRealtime());
+
+
+        Start = view.findViewById(R.id.buttonStart);
+        Stop = view.findViewById(R.id.buttonStop);
+        Reset = view.findViewById(R.id.buttonReset);
+
 
         user = Auth.getCurrentUser();
 
@@ -161,7 +181,7 @@ public class SlideshowFragment extends Fragment {
                     String Cz ="Czas ćwiczenia";
 
 
-                     data += String.format("%1$15s\t%2$15s\t%3$15s\t%4$15s\t%5$15s \n %6$10s\t%7$20s\t%8$20s\t%9$25s\t%10$25s\n\n",cwNazwa,Is,P,C,Cz,cwTime,cwIlosc,cwPowtorzenia,cwCiezar,cwCzas);
+                    data += String.format("%1$-15s\t%2$-15s\t%3$-15s\t%4$-15s\t%5$-15s \n %6$-18s\t%7$7s\t%8$25s\t%9$25s\t%10$13s\n\n",cwNazwa,Is,P,C,Cz,cwTime,cwIlosc,cwPowtorzenia,cwCiezar,cwCzas);
                 }
 
 
@@ -180,13 +200,62 @@ public class SlideshowFragment extends Fragment {
                 {
                      cwNazwa = (String) treningCwiczenia.get(i).get("Nazwa");
                     db.collection("users").document(email).collection(date).document(cwNazwa).set(treningCwiczenia.get(i));
+                    Map<String,Object> dateToArray = new HashMap<>();
+                    dateToArray.put("Data",date);
+                    db.collection("users").document(email).collection("listaDat").document(date).set(dateToArray);
                 }
             }
         });
 
 
+        Start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startChronometer(v);
+            }
+        });
+        Stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stopChronometer(v);
+            }
+        });
+        Reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetChronometer(v);
+            }
+        });
+
     }
-};
+
+    public void startChronometer(View v)
+    {
+        if (!running)
+        {
+            Chronometer.setBase(SystemClock.elapsedRealtime()- pauseOffset) ;
+            Chronometer.start();
+            running = true;
+        }
+    }
+
+    public void stopChronometer(View v)
+    {
+        if (running)
+        {
+            Chronometer.stop();
+            pauseOffset = SystemClock.elapsedRealtime() - Chronometer.getBase();
+            running = false;
+        }
+    }
+
+    public void resetChronometer(View v)
+    {
+        Chronometer.setBase(SystemClock.elapsedRealtime());
+        pauseOffset = 0;
+    }
+
+}
 
 
 
