@@ -75,20 +75,21 @@ public class MainActivity extends AppCompatActivity {
                 final String nazwa = Nazwa.getText().toString();
                 final String haslo = Haslo.getText().toString();
                 final int plec = Plec.getCheckedRadioButtonId();
-                if (TextUtils.isEmpty(email)) {
-                    Email.setError("Email jest wymagany !");
-                    return;
-                }
+
                 if (TextUtils.isEmpty(nazwa)) {
                     Nazwa.setError("Nazwa jest wymagana !");
                     return;
                 }
-                if (TextUtils.isEmpty(nazwa)) {
-                    Nazwa.setError("Nazwa jest wymagana !");
+                if (TextUtils.isEmpty(haslo)) {
+                    Haslo.setError("Hasło jest wymagane !");
                     return;
                 }
                 if (haslo.length() < 6) {
-                    Nazwa.setError("Haslo musi się składać z co najmniej 6 znaków !");
+                    Haslo.setError("Haslo musi się składać z co najmniej 6 znaków !");
+                    return;
+                }
+                if (TextUtils.isEmpty(email)) {
+                    Email.setError("Email jest wymagany !");
                     return;
                 }
                 //rejestracja

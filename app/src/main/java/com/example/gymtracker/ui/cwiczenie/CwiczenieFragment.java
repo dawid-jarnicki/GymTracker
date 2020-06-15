@@ -2,6 +2,7 @@ package com.example.gymtracker.ui.cwiczenie;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,6 +80,14 @@ public class CwiczenieFragment extends Fragment {
                 else typ = Kalistenika.getText().toString();
                 String opis = Opis.getText().toString();
                 String email = user.getEmail();
+
+                if (TextUtils.isEmpty(nazwa)) {
+                    Nazwa.setError("Nie podałeś nazwy ćwiczenia");
+                    return;
+                }
+                if (TextUtils.isEmpty(opis)) {
+                    opis = "";
+                }
                 cwiczenie.put("Nazwa",nazwa);
                 cwiczenie.put("Typ",typ);
                 cwiczenie.put("Opis",opis);
